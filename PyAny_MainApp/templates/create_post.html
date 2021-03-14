@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create Blogpost
+{% endblock %}
+
+
+{% block content %}
+<div class="container jumbotron" style="width: 50rem;">
+    <h3 class="display-6">Compose Blog</h3>
+    <hr class="my-4">
+</div>
+<div class="container jumbotron card" style="width: 50rem;">
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    
+    <div class="form-group">
+      <!--{{ form.title.label(class_="form-control-label") }}-->
+      {{ form.title(class_='form-control',value="[Enter Title Here]") }}
+    </div>
+    
+    <div class="form-group">
+      <!--{{ form.text.label(class_="form-control-label") }}-->
+      <small>Compose Blog</small>
+      {{ form.text(class_='form-control',value="[Compose blog here]") }}
+    </div>
+    <div class="form-group">
+    {{ form.submit(class_='btn btn-outline-info') }}
+    </div>
+  </form>
+</div>
+{% endblock %}
